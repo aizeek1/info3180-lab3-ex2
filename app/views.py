@@ -13,7 +13,6 @@ import smtplib
 # Routing for your application.
 ###
 
-app.secret_key = 'mysecretkey'
 message= """From: {} <{}>
 To: {} <{}> 
 Subject: {}
