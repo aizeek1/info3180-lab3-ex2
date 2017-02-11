@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+<h1 class="page-header"><b>Contact Form</b></h1>
+<p>Fill in this form to contact the site owners.</p>
+<form method='POST'>
+    <div class="form-group">
+    <br><label for="exampleInputName2">Name</label><span style="color:red"> (Required)</span>
+    <p>Please enter your full name </p> 
+    <input name='name' style="width:300px" type="text" class="form-control" id="exampleInputName2"><br>
+    <label for="exampleInputEmail1">E-Mail</label><span style="color:red"> (Required)</span>
+     <p>Please enter your e-mail address</p>
+    <input name='email' style="width:300px" type="email" class="form-control" id="exampleInputEmail1"><br>
+    <label>Subject</label><span style="color:red"> (Required)</span>
+     <p>Please enter the subject for your message.</p>
+    <input name='subject'style="width:300px" type="text" class="form-control"><br>
+    <label>Message</label><span style="color:red"> (Required)</span>
+     <p>Please enter ythe message you would like to send.</p>
+    <textarea name='message'id='msg' style="width:400px" class="form-control" rows="4"></textarea><br>
+    <button style="width:100px" type="submit" class="btn btn-primary"> Send </button>
+    </div>
+</form>
+{% endblock %}
