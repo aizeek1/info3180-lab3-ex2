@@ -13,6 +13,11 @@ import smtplib
 # Routing for your application.
 ###
 
+app.secret_key = 'mysecretkey'
+message= """From: {} <{}>
+To: {} <{}> 
+Subject: {}
+{}  """
     
 @app.route('/')
 def home():
@@ -36,7 +41,7 @@ def contact():
         msg =request.form['message']
         send_mail(from_name,from_email, subject, msg)
         flash('E-Mail has been sent successfully')
-        return redirect(url_for('home'))
+        return render_template({{ url_for('home') }})
     elif request.method=='GET':
         return render_template('contact.html')
 
@@ -44,10 +49,6 @@ def send_mail(from_name, from_email, subject, msg):
     from_addr = request.form['email']
     to_addr = 'keeziallen@gmail.com'
     to_name='superwoman'
-    message= """From: {} <{}>
-    To: {} <{}> 
-    Subject: {}
-    {}  """
     message_to_send = message.format(from_name, from_addr, to_name,to_addr, subject, msg)
     # Credentials (if needed)
     username = 'keeziallen@gmail.com'
