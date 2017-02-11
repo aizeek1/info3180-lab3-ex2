@@ -35,7 +35,7 @@ def contact():
         subject=request.form['subject']
         msg =request.form['message']
         send_mail(from_name,from_email, subject, msg)
-        flash('E-Mail sent successfully')
+        flash('E-Mail has been sent successfully')
         return redirect(url_for('home'))
     elif request.method=='GET':
         return render_template('contact.html')
