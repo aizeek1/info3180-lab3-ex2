@@ -40,8 +40,8 @@ def contact():
         subject=request.form['subject']
         msg =request.form['message']
         send_mail(from_name,from_email, subject, msg)
-        flash('E-Mail has been sent successfully')
-        return render_template({{ url_for('home') }})
+        flash("E-Mail has been sent successfully")
+        return redirect(url_for('home'))
     elif request.method=='GET':
         return render_template('contact.html')
 
